@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Dashboard — MediCare Hub</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></span>
+      MediCare Hub
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="doctors.html">Find Doctors</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-outline btn-sm">Log out</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="doctors.html">Find Doctors</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="index.html">Log out</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <h1 id="welcome-heading">Welcome back</h1>
+    <p>Here's an overview of your upcoming visits and health activity.</p>
+  </div>
+</div>
+
+<main>
+  <div class="container" style="padding-top:40px;">
+    <div class="dash-layout">
+      <aside class="dash-sidebar">
+        <div class="dash-profile">
+          <img id="dp-photo" src="" alt="">
+          <b id="dp-name"></b>
+          <span id="dp-since"></span>
+        </div>
+        <nav class="dash-nav">
+          <a href="dashboard.html" class="active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Overview</a>
+          <a href="appointments.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg> Appointments</a>
+          <a href="doctors.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg> Find doctors</a>
+          <a href="#profile-settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg> Profile settings</a>
+          <a href="contact.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Support</a>
+        </nav>
+      </aside>
+
+      <div>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <span class="icon-badge" style="background:var(--primary-tint); color:var(--primary);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <div><b id="stat-upcoming">0</b><span>Upcoming appointments</span></div>
+          </div>
+          <div class="stat-card">
+            <span class="icon-badge" style="background:var(--success-tint); color:var(--success);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+            <div><b id="stat-completed">0</b><span>Completed visits</span></div>
+          </div>
+          <div class="stat-card">
+            <span class="icon-badge" style="background:var(--accent-tint); color:var(--accent-dark);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></span>
+            <div><b id="stat-doctors">0</b><span>Doctors you've seen</span></div>
+          </div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-card-head">
+            <h3>Next appointment</h3>
+            <a href="appointments.html" class="btn btn-outline btn-sm">View all</a>
+          </div>
+          <div id="next-appointment"></div>
+        </div>
+
+        <div class="dash-card" id="profile-settings">
+          <div class="dash-card-head"><h3>Profile settings</h3></div>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="d-name">Full name</label>
+              <input type="text" id="d-name" value="Jordan Casey">
+            </div>
+            <div class="form-group">
+              <label for="d-email">Email address</label>
+              <input type="email" id="d-email" value="jordan.casey@example.com">
+            </div>
+          </div>
+          <button class="btn btn-primary" id="save-profile-btn">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© <span class="current-year"></span> MediCare Hub. All rights reserved.</span>
+      <span>Demo project only.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

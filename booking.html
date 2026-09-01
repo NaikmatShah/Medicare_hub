@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment — MediCare Hub</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a href="index.html" class="brand">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"/></svg></span>
+      MediCare Hub
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="doctors.html" class="active">Find Doctors</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-outline btn-sm">Log in</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Sign up</a>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="doctors.html" class="active">Find Doctors</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Log in</a>
+    <a href="register.html">Sign up</a>
+  </div>
+</header>
+
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="doctors.html">Find Doctors</a> / Book Appointment</div>
+    <h1>Book your appointment</h1>
+    <p>Choose a consultation type, pick a time, and confirm your visit.</p>
+  </div>
+</div>
+
+<main>
+  <div class="container" style="padding-top:40px;">
+
+    <div class="steps-row">
+      <div class="step-item done"><span class="num"><svg style="width:14px;height:14px;" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg></span><span>Choose doctor</span></div>
+      <div class="step-sep"></div>
+      <div class="step-item current"><span class="num">2</span><span>Select time</span></div>
+      <div class="step-sep"></div>
+      <div class="step-item"><span class="num">3</span><span>Confirm</span></div>
+    </div>
+
+    <div class="booking-grid">
+      <div>
+        <div class="booking-card" style="margin-bottom:22px;">
+          <h3>Consultation type</h3>
+          <div class="type-options" id="type-options"></div>
+
+          <h3>Select a date</h3>
+          <div class="calendar-strip" id="date-strip"></div>
+
+          <h3>Select a time slot</h3>
+          <div class="slot-grid" id="slot-grid"></div>
+        </div>
+
+        <div class="booking-card">
+          <h3>Patient information</h3>
+          <div class="form-row-2">
+            <div class="form-group">
+              <label for="p-name">Full name</label>
+              <input type="text" id="p-name" value="Jordan Casey" required>
+            </div>
+            <div class="form-group">
+              <label for="p-phone">Phone number</label>
+              <input type="tel" id="p-phone" placeholder="+1 (555) 000-0000" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="p-reason">Reason for visit</label>
+            <textarea id="p-reason" placeholder="Briefly describe your symptoms or reason for the appointment..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <aside class="summary-card">
+        <div class="summary-doc" id="summary-doc"></div>
+        <div class="summary-row"><span>Consultation type</span><b id="sum-type">—</b></div>
+        <div class="summary-row"><span>Date</span><b id="sum-date">—</b></div>
+        <div class="summary-row"><span>Time</span><b id="sum-time">—</b></div>
+        <div class="summary-total"><span>Total due</span><span id="sum-fee">$0</span></div>
+        <button class="btn btn-primary btn-block" id="confirm-btn">Confirm appointment</button>
+        <p class="hint text-center" style="margin-top:14px;">You won't be charged until after your visit.</p>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<div class="modal-overlay" id="confirm-modal">
+  <div class="modal-box">
+    <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h3>Appointment confirmed!</h3>
+    <p>A confirmation has been sent to your email. You can manage this booking anytime from your dashboard.</p>
+    <div class="ref-code" id="ref-code">MC-00000</div>
+    <div class="modal-actions">
+      <a href="appointments.html" class="btn btn-outline btn-block">View appointments</a>
+      <a href="dashboard.html" class="btn btn-primary btn-block">Go to dashboard</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© <span class="current-year"></span> MediCare Hub. All rights reserved.</span>
+      <span>Demo project only.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>
