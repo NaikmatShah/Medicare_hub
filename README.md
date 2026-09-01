@@ -121,15 +121,6 @@ Add that link to the top of this README, your GitHub profile, and your CV/resume
 
 This project is open-source and available for personal or educational use. Doctor names, reviews, and clinic details are fictional and used for demonstration purposes only.
 
----
 
-### 📋 For Your CV / Portfolio
 
-> **MediCare Hub** — A responsive healthcare appointment booking platform (HTML, CSS, JavaScript). Built a 10-page site with doctor search & filtering, an interactive booking flow, and a patient dashboard. [Live demo] · [GitHub repo]
 
-Once deployed to GitHub Pages, use this format on your CV:
-```
-MediCare Hub — Healthcare Appointment Platform
-Live: https://<your-username>.github.io/medicare-hub/
-Code: https://github.com/<your-username>/medicare-hub
-```
