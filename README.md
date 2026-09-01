@@ -95,7 +95,7 @@ Deploy this in under a minute with **GitHub Pages**:
 3. Under **Branch**, select `main` and `/ (root)`, then click **Save**.
 4. Your live site will be published at:
    ```
-   https://<your-username>.github.io/medicare-hub/
+   https://NaikmatShah.github.io/medicare-hub/
    ```
 
 Add that link to the top of this README, your GitHub profile, and your CV/resume once deployed.
